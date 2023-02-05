@@ -1,0 +1,263 @@
+/* HERO */
+
+.hero {
+  // position: relative;
+  height: 502px;
+  background-color: $primary_b-c;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  resize: both;
+
+  background-image: url(../images/hero/dots_sm-@1x_result.png);
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(../images/hero/dots_sm-@2x_result.png);
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 415px;
+    background-image: url(../images/hero/dots_md-@1x_result.png);
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/hero/dots_md-@2x_result.png);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    height: 664px;
+    background-size: auto;
+    background-image: url(../images/hero/dots_lg-@1x_result.png);
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/hero/dots_lg-@1x_result.png);
+    }
+  }
+}
+
+.hero .container {
+  position: relative;
+  // поставили релатив на контейнер для того чтобы изображение не плыло при растяжении экрана
+}
+
+.big-icecream {
+  position: absolute;
+  bottom: -271px;
+  left: 32px;
+
+  @media screen and (min-width: 768px) {
+    bottom: -81px;
+    left: 365px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    bottom: -164px;
+    left: 550px;
+  }
+}
+
+.page-title {
+  display: block;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.27;
+  letter-spacing: 0.04em;
+  margin-top: 61px;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+
+  color: $text-wh;
+  width: 247px;
+
+  @media screen and (min-width: 768px) {
+    width: 181px;
+    font-size: 18px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 367px;
+    font-size: 38px;
+    margin-bottom: 28px;
+    margin-top: 45px;
+  }
+}
+
+.page-title_part {
+  font-size: 34px;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 0.55;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 38px;
+  }
+}
+
+.hero-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 28px;
+  }
+  @media screen and (min-width: 1200px) {
+    gap: 12px;
+    margin-bottom: 55px;
+    font-size: 14px;
+  }
+}
+
+.hero_plate {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    // align-items: flex-end;
+  }
+}
+
+.plate_img {
+  display: block;
+  animation-name: spin;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+}
+
+.hero_plate-desc {
+  fill: $text-wh;
+  margin-left: 33px;
+  width: 151px;
+  color: $text-wh;
+  font-size: 12px;
+  line-height: 1.4;
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    margin-left: 14px;
+    width: 200px;
+  }
+}
+
+.products_arrow.arrow--hero {
+  position: static;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.places-number {
+  position: absolute;
+  top: 94px;
+  right: 32px;
+  gap: 20px;
+}
+
+.places-number_num {
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1.21;
+  text-align: right;
+  letter-spacing: 0.04em;
+
+  margin-bottom: 4px;
+  @media screen and (min-width: 1200px) {
+    font-size: 46px;
+  }
+
+  animation-name: rotation;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+}
+
+.places-number_names {
+  font-size: 8px;
+  line-height: 1.25;
+
+  text-align: right;
+
+  color: $text-wh;
+
+  margin-bottom: 20px;
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  animation-name: rotation;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+}
+
+.btn--hero {
+  @media screen and (min-width: 1200px) {
+    width: 154px;
+  }
+}

@@ -1,0 +1,42 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  letter-spacing: normal;
+
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: repeat-y;
+  background-image: url('../images/main_b-c.png');
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.page {
+  overflow: hidden;
+}
+
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Seymour One', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}

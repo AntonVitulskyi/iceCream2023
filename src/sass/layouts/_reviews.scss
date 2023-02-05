@@ -1,0 +1,194 @@
+.reviews {
+  @media screen and (max-width: 767.98px) {
+    background: linear-gradient($primary_b-c 9%, $transparent_b-c 9%);
+  }
+
+  @media screen and (min-width: 768px) {
+    background: linear-gradient($primary_b-c 23%, $transparent_b-c 23%);
+  }
+
+  @media screen and (min-width: 1200px) {
+    background: linear-gradient($primary_b-c 15%, $transparent_b-c 15%);
+  }
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.gallery {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  overflow: hidden;
+
+  @media screen and (max-width: 767.98px) {
+    margin-bottom: 80px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin: 0 auto;
+    margin-bottom: 128px;
+    width: 1012px;
+    height: 421px;
+  }
+}
+
+.gallery_card1 {
+  @media screen and (max-width: 767.98px) {
+    border-radius: 8px;
+  }
+
+  @media screen and (min-width: 768px) {
+    border-radius: 18px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    border-radius: 24px;
+  }
+}
+
+// ANIMATIONS
+
+.gallery_card2,
+.gallery_card3 {
+  width: 1013px;
+  height: 422px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  border-radius: 24px;
+
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+
+  @media screen and (max-width: 1199.98px) {
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  @keyframes galleryFadeInOut {
+    0% {
+      opacity: 1;
+    }
+    45% {
+      opacity: 1;
+    }
+    55% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .gallery_card2 {
+    animation-name: galleryFadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-direction: alternate;
+  }
+
+  .gallery_card3 {
+    animation-name: galleryFadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 20s;
+    animation-direction: alternate;
+  }
+}
+
+// ANIMATIONS END
+
+.reviews_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.reviews_photo {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.reviews_photo > img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.reviews_opinion {
+  margin: 30px auto;
+  padding: 34px 39px;
+  min-width: 270px;
+
+  background: $primary_b-c;
+  border-radius: 10px;
+  color: $text-wh;
+
+  @media screen and (min-width: 768px) {
+    border-radius: 24px;
+    width: 705px;
+    padding: 29px 80px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 968px;
+    padding: 39px 74px;
+  }
+}
+
+.reviews_text {
+  font-size: 12px;
+  line-height: 2.58;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    font-weight: 500;
+    line-height: 1.85;
+    letter-spacing: 0.04em;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 16px;
+    line-height: 1.88;
+  }
+}
+
+.reviews_who {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.85;
+}
+
+// BUTTONS SLIDER
+
+.swiper {
+  min-width: 280px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 44px;
+}
+
+.swiper-pagination-bullet {
+  background: $primary_b-c;
+  width: 12px;
+  height: 12px;
+
+  --swiper-pagination-bullet-horizontal-gap: 9px;
+}

@@ -1,0 +1,244 @@
+@mixin btnFontMod($f-size, $l-height) {
+  font-size: $f-size;
+  line-height: $l-height;
+}
+
+@mixin btnLookMod($bg-color, $b-color, $b-radius) {
+  background-color: $bg-color;
+  border-color: $b-color;
+  border-radius: $b-radius;
+}
+
+@mixin btnUsed($color, $bg-color, $b-color) {
+  color: $color;
+  background-color: $bg-color;
+  border-color: $b-color;
+}
+
+@mixin btnFlex($display, $align, $justify, $gap) {
+  display: $display;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+.btn {
+  @include btnFontMod(14px, 1.29);
+  @include btnLookMod($btn-def, $btn-def, 10px);
+  @include btnFlex(flex, center, center, 10px);
+  padding: 0;
+  height: 42px;
+  font-family: inherit;
+  font-weight: 600;
+  color: #000000;
+  border-width: 2px;
+  border-style: solid;
+
+  &:hover {
+    @include btnUsed(currentColor, $btn-h_f, $btn-h_f);
+  }
+
+  &:focus {
+    @include btnUsed($burger_close, $btn-h_f, $btn-h_f);
+    outline: none;
+  }
+
+  &:disabled {
+    @include btnUsed(currentColor, $btn-dis, $btn-dis);
+  }
+}
+
+.btn_icon {
+  stroke: currentColor;
+}
+
+.btn--readmore {
+  min-width: 164px;
+
+  @media screen and (min-width: 768px) {
+    animation-name: pulse-read;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    @keyframes pulse-read {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    animation-name: pulse-read-mobile;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    @keyframes pulse-read-mobile {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.btn--ourlocations {
+  min-width: 196px;
+
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.05);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+.btn--buynow {
+  @include btnFontMod(14px, 1.2);
+  min-width: 152px;
+
+  @media screen and (min-width: 768px) {
+    animation-name: pulse-buy;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    @keyframes pulse-buy {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    animation-name: pulse-buy-mobile;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    @keyframes pulse-buy-mobile {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.btn--franchise {
+  min-width: 196px;
+  background-color: transparent;
+
+  &:hover,
+  &:focus,
+  &:disabled {
+    background-color: inherit;
+  }
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.05);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+.btn--products {
+  @include btnFontMod(8px, 1.25);
+  @include btnLookMod(transparent, $btn-def, 8px);
+  width: 60px;
+  height: 22px;
+
+  &:hover,
+  &:focus,
+  &:disabled {
+    background-color: inherit;
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include btnFontMod(14px, 1.29);
+    width: 134px;
+    height: 42px;
+  }
+}
+
+.btn--howmade {
+  @include btnFontMod(8px, 1.25);
+  @include btnLookMod(transparent, transparent, 0);
+  width: 80px;
+  height: 22px;
+  color: $btn-def;
+  text-decoration: underline;
+
+  &:hover {
+    @include btnUsed($btn-h_f, transparent, transparent);
+  }
+
+  &:focus {
+    @include btnUsed($burger_close, transparent, transparent);
+    outline: none;
+  }
+
+  &:disabled {
+    @include btnUsed($btn-dis, transparent, transparent);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include btnFontMod(14px, 1.29);
+    width: 111px;
+  }
+}
